@@ -1,4 +1,19 @@
-class button extends HTMLElement {
+const COLORS = {
+    default: '#E0E0E0',
+    default_text: '#3F3F3F7',
+    default_hover: '#AEAEAE',
+    primary: '#2962FF',
+    primary_text:'#FFFFFF',
+    primary_hover: '#0039CB',
+    secondary: '#455A64',
+    secondary_text: '#FFFFFF',
+    secondary_hover: '#1C313A',
+    danger: '#D32F2F',
+    danger_text: '#FFFFFF',
+    danger_hover: '#9A0007'
+  }
+
+class Button extends HTMLElement {
 
     constructor(){
         super();
@@ -18,21 +33,35 @@ class button extends HTMLElement {
 
     connectedCallback() {
 
-        this.buttonElement.innerHTML = this.getAttribute("text");
+        this.buttonElement.appendChild(document.createTextNode(this.getAttribute("text") ?? "default"));
 
-        this.shadowDOM.innerHTML += `
-        <style>
+        let buttonStyle = document.createElement("style");
+
+        buttonStyle.innerHTML = `
             button {
+                font-family: "Noto Sans JP";
+                font-size: 14px;
                 width: 100px;
                 height: 100px;
-                color: red; 
-            }
-        </style>`
+                border: none;
+                border-radius: 6px;
+            }`
+
+        this.shadowDOM.appendChild(buttonStyle)
+
+        if(this.hasAttribute("class")) {
+
+            this.buttonElement.setAttribute("class", this.getAttribute("class"))
+
+        }
+
         
         this.setVariant();
         this.setDisabled();
+        this.setColor();
 
     }
+
 
     setVariant() {
 
@@ -52,10 +81,15 @@ class button extends HTMLElement {
 
         if(this.hasAttribute("disabled")) {
 
-            console.log("sirvio x2")
+            console.log("sirvio x2", this.buttonElement)
 
-            this.buttonElement.createAttribute("disabled");
+            this.buttonElement.disabled = true;
 
+            this.buttonElement.textContent = "Disabled";
+
+            //this.buttonElement.appendChild(document.createTextNode("disabled"))
+
+            
         }
 
     }
@@ -74,13 +108,35 @@ class button extends HTMLElement {
 
     setColor() {
 
+        let buttonColor = this.getAttribute("color") || "default";
+
+        this.buttonElement.style.backgroundColor = COLORS[buttonColor]
+        this.buttonElement.style.color = COLORS[buttonColor + "_text"]
+
+        this.buttonElement.textContent = `${buttonColor[0].toUpperCase()}${buttonColor.slice(1)}`;
+        
+        if(this.buttonElement.hasAttribute("class") && this.buttonElement.getAttribute("class").includes("hover")){ 
+
+            this.buttonElement.style.backgroundColor = COLORS[buttonColor + "_hover"]
+
+        } else {
+
+        this.buttonElement.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = COLORS[buttonColor + "_hover"];
+          })
+          
+          this.buttonElement.addEventListener('mouseleave', (e) => {
+            e.target.style.backgroundColor = COLORS[buttonColor];
+          })
+
+        }
     }
 
     
 
 }
 
-customElements.define("my-button", button);
+customElements.define("my-button", Button);
 
  /*
         "text",
