@@ -49,13 +49,40 @@ class Button extends HTMLElement {
 
         buttonStyle.innerHTML = `
             button {
+                width = 81px;
+                height = 36px;
                 font-family: "Noto Sans JP";
                 font-size: 14px;
-                width: 100px;
-                height: 100px;
+                font-weight: 500;
+                line-height: 20px;
+                text-align: center;
                 border: none;
                 border-radius: 6px;
 
+            }
+            
+            /* fallback */
+            @font-face {
+            font-family: 'Material Symbols Outlined';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v75/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
+            }
+
+            .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
             }`
 
         this.shadowDOM.appendChild(buttonStyle)
@@ -70,6 +97,9 @@ class Button extends HTMLElement {
         this.setDisableShadow();
         this.setDisabled();
         this.setVariant();
+        this.setSize();
+        this.setStartIcon();
+        this.setEndIcon();
 
     }
 
@@ -148,6 +178,19 @@ class Button extends HTMLElement {
 
     setStartIcon() {
 
+        let iconName = this.getAttribute("startIcon");
+
+        if (this.hasAttribute("startIcon") && iconName !== "") {
+
+            let iconSpace = document.createElement("i");
+
+            iconSpace.setAttribute("class", "material-symbols-outlined");
+            iconSpace.textContent = iconName;
+
+            this.buttonElement.appendChild(iconSpace); 
+
+    }
+
     }
 
     setEndIcon() {
@@ -155,6 +198,20 @@ class Button extends HTMLElement {
     }
 
     setSize() {
+
+        let sizeButton = this.getAttribute("size");
+
+        if (sizeButton === "sm") {
+
+            this.buttonElement.style.width = "73px";
+            this.buttonElement.style.height = "32px";
+
+        } else if (sizeButton === "lg") {
+
+            this.buttonElement.style.width = "93px";
+            this.buttonElement.style.height = "42px";
+          
+        }
 
     }
 
@@ -183,12 +240,20 @@ class Button extends HTMLElement {
 
         } else {
 
-        this.buttonElement.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = COLORS[buttonColor + "_hover"];
+            function isTargetButton(element) {return element.target.tagName === "BUTTON"}
+            
+            this.buttonElement.addEventListener('mouseover', (e) => {
+
+                if(!isTargetButton(e)) {
+                    return
+                }
+                e.target.style.backgroundColor = COLORS[buttonColor + "_hover"];
+
           })
           
-          this.buttonElement.addEventListener('mouseleave', (e) => {
-            e.target.style.backgroundColor = COLORS[buttonColor];
+            this.buttonElement.addEventListener('mouseleave', (e) => {
+                e.target.style.backgroundColor = COLORS[buttonColor];
+            
           })
 
         }
@@ -200,13 +265,3 @@ class Button extends HTMLElement {
 
 customElements.define("my-button", Button);
 
- /*
-        "text",
-        "variant",
-        "disabledShadow",
-        "disabled",
-        "startIcon",
-        "endIcon",
-        "size",
-        "color"
-        */
