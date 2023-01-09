@@ -56,8 +56,20 @@ class Button extends HTMLElement {
                 font-weight: 500;
                 line-height: 20px;
                 text-align: center;
+                justify-content: center;
                 border: none;
                 border-radius: 6px;
+
+            }
+
+            .startIcon {
+                display: flex;
+                flex-direction: row-reverse;
+
+            }
+
+            .endIcon {
+
 
             }
             
@@ -73,7 +85,7 @@ class Button extends HTMLElement {
             font-family: 'Material Symbols Outlined';
             font-weight: normal;
             font-style: normal;
-            font-size: 24px;
+            font-size: 14px;
             line-height: 1;
             letter-spacing: normal;
             text-transform: none;
@@ -185,16 +197,34 @@ class Button extends HTMLElement {
             let iconSpace = document.createElement("i");
 
             iconSpace.setAttribute("class", "material-symbols-outlined");
-            iconSpace.textContent = iconName;
+            iconSpace.textContent = " " + iconName;
 
             this.buttonElement.appendChild(iconSpace); 
 
-    }
+            this.buttonElement.setAttribute("class", "startIcon");
+            this.buttonElement.style.width = "105px";
+
+        }
 
     }
 
     setEndIcon() {
 
+        let iconName = this.getAttribute("endIcon");
+
+        if (this.hasAttribute("endIcon") && iconName !== "") {
+
+            let iconSpace = document.createElement("i");
+
+            iconSpace.setAttribute("class", "material-symbols-outlined");
+            iconSpace.textContent = iconName;
+
+            this.buttonElement.appendChild(iconSpace);
+
+            this.buttonElement.setAttribute("class", "endIcon");
+            this.buttonElement.style.width = "105px"
+
+        }
     }
 
     setSize() {
