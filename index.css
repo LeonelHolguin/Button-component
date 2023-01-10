@@ -1,3 +1,212 @@
-* {
-    font-family: "Noto Sans JP";
+*{
+    margin: 4px;
+    padding: 3px;
+    
+}
+
+.main .head {
+    margin-left: 15px; 
+}
+
+.main .head h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    color: #4F4F4F;
+}
+
+.main .content h2 {
+    font-family: 'Ubuntu Mono';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #333333;
+    font-style: normal;
+}
+
+.main .content h3 {
+    font-family: 'Ubuntu Mono';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #828282;
+    font-style: normal;
+}
+
+.main .content .buttonDefault {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 30px;
+    
+}
+
+.main .content .buttonDefault .hoverOff {
+    padding: 2.6px;
+}
+
+.main .content .buttonDefault .hoverOn{
+    padding-left: 15%;
+}
+
+.main .content .buttonVariant {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: -3px;
+    
+}
+
+.main .content .buttonVariant .outline {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.main .content .buttonVariant .outline .hoverOff {
+    padding: 3px;
+}
+
+.main .content .buttonVariant .outline .hoverOn {
+    padding-left: 7.89%;
+}
+
+.main .content .buttonVariant .text{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.main .content .buttonVariant .text .hoverOff {
+    padding: 3px;
+}
+
+.main .content .buttonVariant .text .hoverOn {
+    padding-left: 9.4%;
+}
+
+.main .content .buttonDisabledShadow {
+    margin-bottom: 30px;
+    padding: 12px;
+    text-align: left;
+}
+
+.main .content .buttonDisabled {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.main .content .buttonDisabled .variantTextOff {
+    padding: 2.5px;
+}
+
+.main .content .buttonDisabled .variantTextOff h2{
+    color: #000000;
+}
+
+.main .content .buttonDisabled .variantTextOn {
+    padding-left: 12%;
+}
+
+.main .content .buttonDisabled .variantTextOn h3{
+    color:#333333;
+}
+
+.main .content .buttonIcon {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.main .content .buttonIcon .startIcon {
+    padding: 2.5px;
+}
+
+.main .content .buttonIcon .endIcon {
+    padding-left: 9%;
+}
+
+.main .content .buttonSize {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.main .content .buttonSize .sm {
+    padding: 2.6px;
+}
+
+.main .content .buttonSize .md {
+    padding: 2.5px;
+    padding-left: 5%;
+}
+
+.main .content .buttonSize .lg {
+    padding-left: 8%;
+}
+
+.main .content .buttonColor {
+    display: flex;
+    flex-direction: row;
+    margin-left: -3px;
+    padding: 3px;
+}
+
+.main .content .buttonColor .default {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.main .content .buttonColor .default .hoverOff {
+    margin-bottom: 30px;
+}
+
+.main .content .buttonColor .primary {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 15px;
+    padding: 3px;    
+}
+
+.main .content .buttonColor .primary .hoverOff {
+    margin-bottom: 60px;
+}
+
+.main .content .buttonColor .secondary {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 4.4%;    
+}
+
+.main .content .buttonColor .secondary .hoverOff {
+    margin-bottom: 60px;
+}
+
+.main .content .buttonColor .danger {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 4%;    
+}
+
+.main .content .buttonColor .danger .hoverOff {
+    margin-bottom: 60px;
+}
+
+footer {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+    color: #A9A9A9;
+    margin-left: 10px;
 }

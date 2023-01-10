@@ -48,10 +48,12 @@ class Button extends HTMLElement {
         let buttonStyle = document.createElement("style");
 
         buttonStyle.innerHTML = `
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
             button {
                 width = 81px;
                 height = 36px;
-                font-family: "Noto Sans JP";
+                font-family: 'Noto Sans JP', sans-serif;
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 20px;
@@ -65,13 +67,36 @@ class Button extends HTMLElement {
             .startIcon {
                 display: flex;
                 flex-direction: row-reverse;
+                justify-content: center;
+                text-align: center;
+                padding: 7.5px;
+                padding-left: 1px;
+
+            }
+
+            .startIcon i {
+                padding: 4px;
+                padding-right: 12px;
 
             }
 
             .endIcon {
-
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+                padding: 7.5px;
+                padding-right: 1px;
 
             }
+
+            .endIcon i {
+                padding: 4px;
+                padding-left: 12px;
+
+            }
+
+
             
             /* fallback */
             @font-face {
@@ -255,6 +280,12 @@ class Button extends HTMLElement {
         this.buttonElement.style.color = COLORS[buttonColor + "_text"];
         
         this.buttonElement.style.boxShadow = buttonShadow + COLORS[buttonColor + "_shadow"];
+
+        if(buttonColor === "secondary") {
+
+            this.buttonElement.style.width = "104px";
+
+        }
 
         
 
