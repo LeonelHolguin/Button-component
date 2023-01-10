@@ -41,7 +41,7 @@
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Where can I see your demo? I don't know where can I put my solution for get a demo of it.
+- Where can I see your demo? In vercel, it's the link: https://button-component-flax.vercel.app/
 - What was your experience? very good, I feel so happy while I'm doing this project, sometimes I got to feel like stressed but I is normal.
 - What have you learned/improved? basically this topic, before this project I don't know anything of web component and I had to do a lot of reseach, also I learned more of js vanilla because I do this project without ReactJs or another framework of Js.
 - Your wisdom? I can say 5/10 xd
