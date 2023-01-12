@@ -1,28 +1,26 @@
 <!-- Please update value in the {}  -->
 
-<center>
-  <h1>Button component</h1>
+<h1 align="center">Button component</h1>
 
-  <div>
-    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-  </div>
+<div align="center">
+  Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
+</div>
 
-  <div>
-    <h3>
-      <a href="https://button-component-flax.vercel.app/">
-        Demo
-      </a>
-      <span> | </span>
-      <a href="https://devchallenges.io/solutions/MeU483D455JDcMgRsGBF">
-        Solution
-      </a>
-      <span> | </span>
-      <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
-        Challenge
-      </a>
-    </h3>
-  </div>
-</center>
+<div align="center">
+  <h3>
+    <a href="https://button-component-flax.vercel.app/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/solutions/MeU483D455JDcMgRsGBF">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
+      Challenge
+    </a>
+  </h3>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 
