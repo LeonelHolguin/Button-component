@@ -1,7 +1,6 @@
 *{
     margin: 4px;
     padding: 3px;
-    
 }
 
 .main .head {
@@ -16,22 +15,20 @@
     color: #4F4F4F;
 }
 
-.main .content h2 {
+.main .content h2, .main .content h3 {
     font-family: 'Ubuntu Mono';
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
-    color: #333333;
     font-style: normal;
 }
 
+.main .content h2 {
+    color: #333333;
+}
+
 .main .content h3 {
-    font-family: 'Ubuntu Mono';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 12px;
     color: #828282;
-    font-style: normal;
 }
 
 .main .content .buttonDefault {
@@ -58,28 +55,18 @@
     
 }
 
-.main .content .buttonVariant .outline {
+.main .content .buttonVariant .outline, .main .content .buttonVariant .text {
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
 }
 
-.main .content .buttonVariant .outline .hoverOff {
+.main .content .buttonVariant .outline .hoverOff, .main .content .buttonVariant .text .hoverOff {
     padding: 3px;
 }
 
 .main .content .buttonVariant .outline .hoverOn {
     padding-left: 7.89%;
-}
-
-.main .content .buttonVariant .text{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
-}
-
-.main .content .buttonVariant .text .hoverOff {
-    padding: 3px;
 }
 
 .main .content .buttonVariant .text .hoverOn {
